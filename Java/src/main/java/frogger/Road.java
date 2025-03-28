@@ -6,13 +6,17 @@ package frogger;
  * @author Zishen Wen (F22), Deyuan Chen (S22)
  */
 public class Road {
-    private final boolean[] occupied;
+  private final boolean[] occupied;
 
-    public Road(boolean[] occupied) {
-        this.occupied = occupied;
-    }
+  public Road(boolean[] occupied) {
+    this.occupied = occupied;
+  }
 
-    public boolean[] getOccupied() {
-        return this.occupied;
-    }
+  public boolean isOccupied(int position) {
+    return position >= 0 && position < occupied.length && occupied[position];
+  }
+
+  public boolean isValid(int position) {
+    return position >= 0 && position < occupied.length;
+  }
 }

@@ -1,7 +1,9 @@
 package frogger;
 
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Refactor Task 2.
@@ -9,10 +11,11 @@ import java.util.List;
  * @author Zishen Wen (F22), Deyuan Chen (S22)
  */
 public class Records {
-    private final List<String[]> records;
+    // private final List<String[]> records;
+    private  final Set<FroggerID> records;
 
     public Records() {
-        this.records = new ArrayList<>();
+        this.records = new HashSet<>();
     }
 
     /**
@@ -26,20 +29,24 @@ public class Records {
      * @param gender      gender of the frogger
      * @return Return false if the record has existed. Else, return true.
      */
-    public boolean addRecord(String firstName, String lastName, String phoneNumber,
-                             String zipCode, String state, String gender) {
-        for (String[] row : this.records) {
-            if (row[0].equals(firstName)
-                    && row[1].equals(lastName)
-                    && row[2].equals(phoneNumber)
-                    && row[3].equals(zipCode)
-                    && row[4].equals(state)
-                    && row[5].equals(gender)) {
-                return false;
-            }
-        }
-        this.records.add(
-                new String[]{firstName, lastName, phoneNumber, zipCode, state, gender});
-        return true;
+    // public boolean addRecord(String firstName, String lastName, String phoneNumber,
+    //                          String zipCode, String state, String gender) {
+    //     for (String[] row : this.records) {
+    //         if (row[0].equals(firstName)
+    //                 && row[1].equals(lastName)
+    //                 && row[2].equals(phoneNumber)
+    //                 && row[3].equals(zipCode)
+    //                 && row[4].equals(state)
+    //                 && row[5].equals(gender)) {
+    //             return false;
+    //         }
+    //     }
+    //     this.records.add(
+    //             new String[]{firstName, lastName, phoneNumber, zipCode, state, gender});
+    //     return true;
+    // }
+
+    public boolean addRecord(FroggerID id) {
+        return records.add(id); //hashset ashiglaj bgaa uchraas 
     }
 }
